@@ -96,6 +96,8 @@
       document.getElementById("stops").innerHTML = "Stops :- " + datas;
     });
 })(jQuery);
+
+
 function showBus(no) {
   firebase
     .database()
