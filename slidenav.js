@@ -75,25 +75,35 @@
   firebase
     .database()
     .ref("/Bus")
-    .once("value")
-    .then(function(snap) {
+    .on("value", function(snap) {
       data = snap.val();
       document.getElementById("title").innerHTML = "Bus no :- " + 111;
       document.getElementById("avgtime").innerHTML =
-        "Average time :- " + data[111].avgtime;
+        "<b>" + "Average time :- " + "</b>" + data[111].avgtime;
 
-      document.getElementById("cap").innerHTML = "Capacity :- " + data[111].cap;
+      document.getElementById("cap").innerHTML =
+        "<b>" + "Capacity :- " + "</b>" + data[111].cap;
       document.getElementById("lstart").innerHTML =
-        "Journey Started :- " + data[111].lstart;
+        "<b>" + "Journey Started :- " + "</b>" + data[111].lstart;
       document.getElementById("occ").innerHTML =
-        "Occupancy :- " + data[111].occ;
+        "<b>" + "Occupancy :- " + "</b>" + data[111].occ;
       document.getElementById("routedistance").innerHTML =
-        "Routed Distance :- " + data[111].routedistance;
+        "<b>" + "Routed Distance :- " + "</b>" + data[111].routedistance;
       var stops = data[111].stops;
       datas = "";
-      stops.split("").forEach(d => (datas = datas.concat(d, " -> ")));
+      stops.split("").forEach(d => {
+        if (d == 1) d = "Prashant Vihar";
+        else if (d == 2) d = "Rohini Court Subway";
+        else if (d == 3) d = "Madhuban Chowk";
+        else if (d == 4) d = "Pitampura Metro";
+        else if (d == 5) d = "Kohat Enclave";
+        else if (d == 6) d = "ND Block";
+        else if (d == 7) d = "Netaji Subhash Place";
+        datas = datas.concat(d, " -> ");
+      });
       datas = datas.substring(0, datas.length - 3);
-      document.getElementById("stops").innerHTML = "Stops :- " + datas;
+      document.getElementById("stops").innerHTML =
+        "<b>" + "Stops :- " + "</b>" + datas;
     });
 })(jQuery);
 
@@ -102,22 +112,33 @@ function showBus(no) {
   firebase
     .database()
     .ref("/Bus")
-    .once("value")
-    .then(function(snap) {
+    .on("value", function(snap) {
       data = snap.val();
       document.getElementById("title").innerHTML = "Bus no :- " + no;
       document.getElementById("avgtime").innerHTML =
-        "Average time :- " + data[no].avgtime;
-      document.getElementById("cap").innerHTML = "Capacity :- " + data[no].cap;
+        "<b>" + "Average time :- " + "</b>" + data[no].avgtime;
+      document.getElementById("cap").innerHTML =
+        "<b>" + "Capacity :- " + "</b>" + data[no].cap;
       document.getElementById("lstart").innerHTML =
-        "Journey Started :- " + data[no].lstart;
-      document.getElementById("occ").innerHTML = "Occupancy :- " + data[no].occ;
+        "<b>" + "Journey Started :- " + "</b>" + data[no].lstart;
+      document.getElementById("occ").innerHTML =
+        "<b>" + "Occupancy :- " + "</b>" + data[no].occ;
       document.getElementById("routedistance").innerHTML =
-        "Routed Distance :- " + data[no].routedistance;
+        "<b>" + "Routed Distance :- " + "</b>" + data[no].routedistance;
       var stops = data[no].stops;
       datas = "";
-      stops.split("").forEach(d => (datas = datas.concat(d, " -> ")));
+      stops.split("").forEach(d => {
+        if (d == 1) d = "Prashant Vihar";
+        else if (d == 2) d = "Rohini Court Subway";
+        else if (d == 3) d = "Madhuban Chowk";
+        else if (d == 4) d = "Pitampura Metro";
+        else if (d == 5) d = "Kohat Enclave";
+        else if (d == 6) d = "ND Block";
+        else if (d == 7) d = "Netaji Subhash Place";
+        datas = datas.concat(d, " -> ");
+      });
       datas = datas.substring(0, datas.length - 3);
-      document.getElementById("stops").innerHTML = "Stops :- " + datas;
+      document.getElementById("stops").innerHTML =
+        "<b>" + "Stops :- " + "</b>" + datas;
     });
 }
