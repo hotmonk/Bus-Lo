@@ -1,20 +1,32 @@
 /* Slidenav 4.0.0-alpha.5 ( https://github.com/tightcode/slidenav ) */
 @media (min-width: 768px) {
-  .dropdown>div {
+  .dropdown > div {
     position: absolute;
     clip: rect(0.5rem, 9999px, 9999px, -9999px);
   }
 }
-.map-container-2{
-  overflow:hidden;
-  padding-bottom:56.25%;
-  position:relative;
-  height:0;
-  }
-  .map-container-2 iframe{
-  left:0;
-  top:0;
-  height:100%;
-  width:100%;
-  position:absolute;
-  }
+.map-container-2 {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+.map-container-2 iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+#title {
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
+}
+.card-title {
+  color: black;
+}
+
+a:hover {
+  cursor: pointer;
+}
