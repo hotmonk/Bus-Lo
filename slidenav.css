@@ -1,4 +1,8 @@
 /* Slidenav 4.0.0-alpha.5 ( https://github.com/tightcode/slidenav ) */
+/* #logout
+{
+  text-align: right;
+} */
 @media (min-width: 768px) {
   .dropdown > div {
     position: absolute;
@@ -30,3 +34,4 @@
 a:hover {
   cursor: pointer;
 }
+
